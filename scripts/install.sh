@@ -9,6 +9,6 @@ az deployment sub create \
   --template-file ../infrastructure/main.bicep \
   --parameters subscriptionId=$SUBSCRIPTION_ID \
     location=$LOCATION \
-    resourceNameGroup=$RESOURCE_GROUP_NAME \
+    environment=$ENVIRONMENT \
     # iotHubName=summer-katas
     

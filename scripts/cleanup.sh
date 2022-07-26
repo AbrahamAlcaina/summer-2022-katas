@@ -4,5 +4,5 @@ if [ -f .env ]; then
     export $(cat .env | grep -v '#' | sed 's/\r$//' | awk '/=/ {print $1}' )
 fi
 
-echo "Delete $RESOURCE_GROUP_NAME" 
-az group delete --name $RESOURCE_GROUP_NAME
+echo "Delete $ENVIRONMENT" 
+az group delete --name "rg-$ENVIRONMENT"
