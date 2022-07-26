@@ -10,4 +10,5 @@ az deployment sub create \
   --parameters subscriptionId=$SUBSCRIPTION_ID \
     location=$LOCATION \
     resourceNameGroup=$RESOURCE_GROUP_NAME \
+    # iotHubName=summer-katas
     
