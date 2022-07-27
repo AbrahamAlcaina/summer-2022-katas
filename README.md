@@ -7,4 +7,9 @@ Test some biceps on Azure
 ## Azure deployment
 
 1. Copy .env-example to .env
-2. Execute install
+2. Execute ./scripts/install.sh
+
+# Azure deploy container registry
+
+Execute ./scripts/install-registry.sh
+Execute ./scripts/cleanup-registry.sh to delete it

@@ -58,7 +58,7 @@ module iotHub 'iotHub.bicep' = {
 ///////////////////////////////////////////////////////////////////////////////
 /// APP CONTAINER ENVIRONMENT
 ///////////////////////////////////////////////////////////////////////////////
-module AppContarinerEnvironment 'enviroment.bicep' = {
+module appContarinerEnvironment 'enviroment.bicep' = {
   name: 'appContainer-${environment}'
   params: {
     location: location

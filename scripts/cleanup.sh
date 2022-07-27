@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Local .env
 if [ -f .env ]; then
     # Load Environment Variables

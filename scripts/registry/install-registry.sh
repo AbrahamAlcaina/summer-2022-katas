@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Local .env
 if [ -f .env ]; then
     # Load Environment Variables
@@ -7,9 +8,7 @@ fi
 
 az deployment sub create \
   --location=$LOCATION \
-  --template-file ../infrastructure/main.bicep \
+  --template-file ../infrastructure/containerRegistry/main.bicep \
   --parameters subscriptionId=$SUBSCRIPTION_ID \
     location=$LOCATION \
-    environment=$ENVIRONMENT \
-    # iotHubName=summer-katas
     

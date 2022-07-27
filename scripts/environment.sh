@@ -1,3 +1,4 @@
+#!/bin/bash
 az login
 az upgrade
 az bicep install
