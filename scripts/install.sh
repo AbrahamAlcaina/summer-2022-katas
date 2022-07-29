@@ -11,5 +11,6 @@ az deployment sub create \
   --parameters subscriptionId=$SUBSCRIPTION_ID \
     location=$LOCATION \
     environment=$ENVIRONMENT \
+    containerRegistryPassword=$CONTAINER_REGISTRY_PASSWORD \
     # iotHubName=summer-katas
     

@@ -28,7 +28,7 @@ let webApp =
 
 let configureCors (builder: CorsPolicyBuilder) =
     builder
-        .WithOrigins("http://localhost:8080")
+        .WithOrigins("http://localhost:80")
         .AllowAnyMethod()
         .AllowAnyHeader()
     |> ignore
@@ -39,7 +39,6 @@ let configureApp (app: IApplicationBuilder) =
     (match env.IsDevelopment() with
      | true -> app.UseDeveloperExceptionPage()
      | false -> app.UseGiraffeErrorHandler errorHandler)
-        .UseHttpsRedirection()
         .UseCors(configureCors)
         .UseGiraffe(webApp)
 
@@ -56,14 +55,9 @@ let configureLogging (builder: ILoggingBuilder) =
 
 [<EntryPoint>]
 let main args =
-    let contentRoot = Directory.GetCurrentDirectory()
-    let webRoot = Path.Combine(contentRoot, "WebRoot")
 
     WebHostBuilder()
         .UseKestrel()
-        .UseContentRoot(contentRoot)
-        .UseIISIntegration()
-        .UseWebRoot(webRoot)
         .Configure(Action<IApplicationBuilder> configureApp)
         .ConfigureServices(configureServices)
         .ConfigureLogging(configureLogging)

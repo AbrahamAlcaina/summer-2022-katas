@@ -69,3 +69,18 @@ module appContarinerEnvironment 'enviroment.bicep' = {
   dependsOn: [ storageAccount ]
   scope: resourceGroup(rg.name)
 }
+
+///////////////////////////////////////////////////////////////////////////////
+/// TELEMETRY Service
+///////////////////////////////////////////////////////////////////////////////
+param containerRegistryPassword string
+module telemetryService 'telemetry.bicep' = {
+  name: 'telemtry-sevice-${environment}'
+  params: {
+    location: location
+    environmnetId: appContarinerEnvironment.outputs.environmentId
+    containerRegistryPassword: containerRegistryPassword
+  }
+  dependsOn: [ appContarinerEnvironment ]
+  scope: resourceGroup(rg.name)
+}

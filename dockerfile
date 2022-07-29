@@ -22,7 +22,8 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine AS telemetry-app
 WORKDIR /app
 COPY --from=telemetry-builder /app/projects/telemetry/out .
-EXPOSE 8080
+EXPOSE 80
+EXPOSE 443
 ENTRYPOINT ["dotnet", "telemetry.dll"]
 
 
