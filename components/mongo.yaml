@@ -1,0 +1,20 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: mongo
+spec:
+  type: state.mongodb
+  version: v1
+  metadata:
+    - name: host
+      secretKeyRef:
+        name: MONGO_HOST
+    - name: databaseName
+      value: telemetry-db
+    - name: collectionName
+      value: state
+scopes:
+  - telemetry-app
+
+auth:
+  secretStore: envvar-secret-store
