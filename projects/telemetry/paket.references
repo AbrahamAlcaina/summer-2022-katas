@@ -2,3 +2,5 @@ Giraffe
 Dapr.AspNetCore
 Dapr.Extensions.Configuration
 Dapr.Client
+FsToolkit.ErrorHandling
+FSharp.SystemTextJson

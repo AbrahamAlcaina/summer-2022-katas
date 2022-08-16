@@ -6,14 +6,31 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="utils.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="interfaces/types.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="useCase/receiveTelemetryFromDevice.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="infrastructure/env/env.fs" />
+    <Compile Include="infrastructure/repositories/telemetry.fs" />
+    <Compile Include="infrastructure/webserver/routes.fs" />
+    <Compile Include="infrastructure/webserver/services.fs" />
+    <Compile Include="infrastructure/webserver/cors.fs" />
+    <Compile Include="infrastructure/webserver/login.fs" />
+    <Compile Include="infrastructure/webserver/server.fs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Program.fs" />
   </ItemGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
-
   <ItemGroup>
     <None Include="web.config" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="WebRoot\**\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

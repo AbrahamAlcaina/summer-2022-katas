@@ -9,3 +9,5 @@ nuget Dapr.AspNetCore
 nuget Dapr.Client 
 nuget Dapr.Extensions.Configuration 
 nuget Giraffe
+nuget FsToolkit.ErrorHandling
+nuget FSharp.SystemTextJson
